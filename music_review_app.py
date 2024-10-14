@@ -29,6 +29,24 @@ def all_songs():
     conn = get_db_connections()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM songs")
-    games = cursor.fetchall()
+    songs = cursor.fetchall()
     conn.close()
-    return render_template('all_songs.html', all_songs=all_songs)
+    return render_template('all_songs.html', songs = songs)
+
+@app.route('/ratings')
+def view_ratings():
+    conn = get_db_connections()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM users-ratings")
+    ratings = cursor.fetchall()
+    conn.close()
+    return render_template('view_ratings.html', ratings = ratings)
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+
+
+if __name__ == '__main__':
+    app.run(debug=True) 
