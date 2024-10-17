@@ -1,5 +1,7 @@
 body {
-    background-color: #f3b909;
+    background-image: url(/static/Images/Background-image.png);
+    background-repeat: no-repeat;
+    background-size: cover;
     margin: 0;
     padding: 0;
 }
@@ -22,6 +24,7 @@ li h1{
     font-size: 20pt;
     margin-right: auto;
     display: block;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 li a{
@@ -32,10 +35,12 @@ li a{
     font-size: 10pt;
     font-weight: 600;
     display: block;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 li a:hover {
     border-bottom: 2px solid #333;
+    cursor: pointer;
 }
 
 li img{
@@ -53,18 +58,20 @@ li img{
 
 #rightside-nav-bar li{
     display: inline-block;
-    padding: 0 15px;
+    padding: 0 10px;
+    font-family: Arial, Helvetica, sans-serif;
+
 }
 
 #heroimage img{
-    width: 850px;
+    width: 1250px;
     margin: 0 auto;
     float: left;
 }
 
 #title-text{
-    width: 582px;
-    height: 390px;
+    width: 652px;
+    height: 574px;
     background-color: #f5f5f5;
     float: left;
     margin: 0 auto;
@@ -72,9 +79,43 @@ li img{
 
 #title-text h1{
     font-size: 20pt;
-    padding: 0 10px;
+    padding: 0 20px;
+    color: #333;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 #title-text p{
-    padding: 0 10px;
+    padding: 0 20px;
+    font-size: 13pt;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#start-rating-button{
+    background-color: #8d8d8d;
+    padding: 15px 32px;
+    color: #333;
+    cursor: pointer;
+    margin: 75px 0 0 350px;
+    text-align: center;
+    font-weight: 700;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: none;
+    border-radius: 100px;
+    font-size: 20pt;
+    border: none;
+}
+
+#bottomcontainer{
+    width: 1600px;
+    margin: 0 auto;
+}
+
+#bottomcontainer h1{
+    margin: 0 auto;
+    padding: 35px 0 0;
+    float: left;
+    font-size: 30pt;
+    font-weight: 600;
+    font-family: ;
 }
