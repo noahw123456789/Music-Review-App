@@ -10,7 +10,7 @@ app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
 # Function to connect to the SQLite Database
-def get_db_connections():
+def get_db_connection():
     # Connect to 'musicreview.db' database.
     conn = sqlite3.connect('musicreview.db')
     # This makes it easier to access rows as dictonaries and the data by field
@@ -26,7 +26,7 @@ def index():
 @app.route('/songs')
 def all_songs():
     # Render the 'all_songs.html' template and display it in the browser
-    conn = get_db_connections()
+    conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM songs")
     songs = cursor.fetchall()
@@ -35,7 +35,7 @@ def all_songs():
 
 @app.route('/ratings')
 def view_ratings():
-    conn = get_db_connections()
+    conn = get_db_connection()
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM users-ratings")
     ratings = cursor.fetchall()
@@ -45,8 +45,6 @@ def view_ratings():
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-
-
 
 if __name__ == '__main__':
     app.run(debug=True) 
