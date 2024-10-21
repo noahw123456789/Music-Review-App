@@ -64,13 +64,13 @@ li img{
 }
 
 #heroimage img{
-    width: 1250px;
+    width: 1240px;
     margin: 0 auto;
     float: left;
 }
 
 #title-text{
-    width: 652px;
+    width: 650px;
     height: 574px;
     background-color: #f5f5f5;
     float: left;
@@ -118,14 +118,18 @@ li img{
 #bottomcontainer h1 {
     font-size: 30pt;
     font-weight: 600;
-    padding: 35px 0 0;
-    margin-top: 100px;
+}
+
+#homepage-songs {
+    display: inline-block;
+    margin: 0 auto;
+    width: 1600px;
 }
 
 .song-card-homepage {
     width: 400px;
+    margin: 0 auto;
     height: 500px;
-    float: left;
     border-radius: 10px;
     box-shadow: 0px 4px 6px #000;
     overflow: hidden;

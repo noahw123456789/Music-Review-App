@@ -33,6 +33,12 @@ def all_songs():
     conn.close()
     return render_template('all_songs.html', songs = songs)
 
+@app.route('/rate')
+def song_rating():
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    song = conn.execute('SELECT * FROM songs WHERE id = ?', (id,)).fetchone()
+
 @app.route('/ratings')
 def view_ratings():
     conn = get_db_connection()
