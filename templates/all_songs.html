@@ -15,17 +15,33 @@
 
     {% block content %}
 
-    <div id="all_songs_grid">
-        <table>
-            <thead>
-                <tr>
-                    <div class="leftside">
-                        <th><img src="" alt="" ></th>
-                        <th>Song name</em></th>
-                    </div>
+    <div id="bottomcontainer">
+        <h1>Featured Songs</h1>
+        <div class="songs-container">
+            <table>
+                {% for song in songs %}
+                <tr class="song-card-homepage">
+                    <td><img src="{{ url_for('static', filename='/Images/Songs-Covers/' ~ song.thumbnail) }}" alt="Song Thumbnail"></td>
+                    <td>Title: {{ song.song_title }}</td>
+                    <td>Artist: {{ song.artist_name }}</td>
+                    <td>Release Year: {{ song.release_year }}</td>                        
+                    <td>Album: {{ song.album }}</td>
+                    <td>Genre: {{ song.genre }}</td>
+                    <td>
+                        <audio controls>
+                            <source src="{{ url_for('static', filename='/Songs/' ~ Songs) }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
+                    <td>                        
+                        <form action="{{ url_for('song_rating') }}" method="post">
+                        <button class="rate-button-homepage">Rate it</button>
+                        </form>
+                    </td>
                 </tr>
-            </thead>
-        </table>
+            {% endfor %}
+            </table>
+        </div>
     </div>
     {% endblock %}
 </body>
