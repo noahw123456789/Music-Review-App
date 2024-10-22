@@ -37,7 +37,9 @@ def all_songs():
 def song_rating():
     conn = get_db_connection()
     cursor = conn.cursor()
-    song = conn.execute('SELECT * FROM songs WHERE id = ?', (id,)).fetchone()
+    conn.execute('SELECT * FROM songs WHERE id = ?', (id,)).fetchone()
+    conn.close()
+    return render_template('')
 
 @app.route('/ratings')
 def view_ratings():

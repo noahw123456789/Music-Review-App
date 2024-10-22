@@ -32,6 +32,15 @@
             <h1>Featured Songs</h1>
             <div id="homepage-songs">
                 <div class="song-card-homepage">
+                    <td><img src="{{ url_for('static', filename='uploads/' ~ song.thumbnail" alt="Song Thumbnail"></td>
+                    <td>{{ songs.id }}</td>
+                    <td>{{ songs.song-title }}</td>
+                    <td>{{ songs.artist_name }}</td>
+                    <td>{{ songs.release_year }}</td>
+                    <td>{{ songs.album }}</td>
+                    <td>{{ songs.genre }}</td>
+                    <td><audio src="{{ url_for('static', filename='uploads/' ~ song.audio"></audio></td>
+                    </td>
                     <div class="song-thumbnail-homepage">
                         <img src="/static/Images/Song-Covers/9-5.png" alt="9-to-5 Song Cover">
                         
