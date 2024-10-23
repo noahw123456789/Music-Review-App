@@ -6,43 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <title>All Songs</title>
-
 </head>
 <body>
-    
-    <!-- Extending the base layout -->
-    {% extends 'base.html' %}
-
-    {% block content %}
-
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
     <div id="bottomcontainer">
         <h1>Featured Songs</h1>
         <div class="songs-container">
-            <table>
-                {% for song in songs %}
-                <tr class="song-card-homepage">
-                    <td><img src="{{ url_for('static', filename='/Images/Songs-Covers/' ~ song.thumbnail) }}" alt="Song Thumbnail"></td>
-                    <td>Title: {{ song.song_title }}</td>
-                    <td>Artist: {{ song.artist_name }}</td>
-                    <td>Release Year: {{ song.release_year }}</td>                        
-                    <td>Album: {{ song.album }}</td>
-                    <td>Genre: {{ song.genre }}</td>
-                    <td>
-                        <audio controls>
-                            <source src="{{ url_for('static', filename='/Songs/' ~ Songs) }}" type="audio/mpeg">
-                            Your browser does not support the audio element.
-                        </audio>
-                    </td>
-                    <td>                        
-                        <form action="{{ url_for('song_rating') }}" method="post">
+            {% for song in songs %}
+            <div class="song-card-homepage">
+                <div class="song-media">
+                    <img src="{{ url_for('static', filename='Images/Song-Covers/' ~ song.thumbnail) }}" alt="Song Thumbnail">
+                    <audio controls>
+                        <source src="{{ url_for('static', filename='Songs/' ~ song.audio) }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                </div>
+                <div class="song-details">
+                    <p>Title: {{ song.song_title }}</p>
+                    <p>Artist: {{ song.artist_name }}</p>
+                    <p>Release Year: {{ song.release_year }}</p>
+                    <p>Album: {{ song.album }}</p>
+                    <p>Genre: {{ song.genre }}</p>
+                    <form action="{{ url_for('song_rating') }}" method="post">
                         <button class="rate-button-homepage">Rate it</button>
-                        </form>
-                    </td>
-                </tr>
+                    </form>
+                </div>
+            </div>
             {% endfor %}
-            </table>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
 </body>
 </html>
